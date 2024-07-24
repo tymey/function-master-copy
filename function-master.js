@@ -3,14 +3,19 @@
 //////////////////////////////////////////////////////////////////////
 
 /**
- * I: 
- * O: 
+ * I: The function receives an object.
+ * O: The function returns an array containing the values assigned to each key in the input object.
  * C: N/A
- * E: 
+ * E: N/A
  */
 
 function objectValues(object) {
-    // code
+    // Initialize output variable with an empty array
+    var output = [];
+    // Declare for-in loop on input object
+    for (var key in object) {
+        // 
+    }
 } 
 
 //////////////////////////////////////////////////////////////////////
