@@ -5,28 +5,30 @@
       var some_number = 484;
   
       //                     ┌ Change this to what it should be
-      assert.equal( value, '???');
+      assert.equal( value, 'hello tests'); // value is assigned "hello tests"
       //                           ┌ Change this to what it should be
-      assert.equal( some_number, "???");
+      assert.equal( some_number, 484); // some_number is assigned 484
     });
   
     QUnit.test("Functions can access/modify variables in parent scope.", function(assert){
-      var outside_the_function = null;
+      var outside_the_function = null; // Globally scoped
 
       function yay(){
-        var inside_the_function = "can you see me?";
-        outside_the_function = inside_the_function; 
+        var inside_the_function = "can you see me?"; // function scoped
+        outside_the_function = inside_the_function; /* outside_the_function is assigned the value assigned to inside_the_function
+                                                       which will reassgin the globally scoped variable outside_the_function to 
+                                                       "can you see me?" */                                        
       }
   
       yay();
   
-      assert.equal(outside_the_function, "???");
+      assert.equal(outside_the_function, "can you see me?");
     });
   
     QUnit.test("Function Parameters become scoped to the function.", function(assert){
   
       function yay(param){
-        assert.equal(param, "???");
+        assert.equal(param, '???');
       }
   
       yay("a fine kettle of fish");
