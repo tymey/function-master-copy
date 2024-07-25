@@ -145,14 +145,17 @@ function capitalizeAllWords(string) {
 //////////////////////////////////////////////////////////////////////
 
 /**
- * I: 
- * O: 
- * C: 
- * E: 
+ * I: The function receives an object with a name property.
+ * O: The function returns a string "Welcome <Name>!" where <name> comes
+ *    from the input object's name property with the first letter capitalized.
+ * C: N/A
+ * E: N/A
  */
 
 function welcomeMessage(object) {
-
+    // Invoke capitalizeWord() on object.name to capitalize it
+    // Return the capitalized name with "Welcome " before it and "!" after.
+    return "Welcome " + capitalizeWord(object.name) + "!";
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -160,14 +163,19 @@ function welcomeMessage(object) {
 //////////////////////////////////////////////////////////////////////
 
 /**
- * I: 
- * O: 
- * C: 
- * E: 
+ * I: The function receives an object with a name and a species.
+ * O: The function returns a string "<Name> is a <Species>" where both
+ *    <Name> and <Species> are capitalized and come from the input object.
+ * C: N/A
+ * E: N/A
  */
 
 function profileInfo(object) {
-
+    // Return the string "<Name> is a <Species>"
+        // <Name> comes from object.name
+        // <Species> comes from object.species
+            // Capitalize both by invoking capitalizeWord()
+    return capitalizeWord(object.name) + ' is a ' + capitalizeWord(object.species);
 }
 
 //////////////////////////////////////////////////////////////////////
