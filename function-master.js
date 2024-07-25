@@ -183,14 +183,28 @@ function profileInfo(object) {
 //////////////////////////////////////////////////////////////////////
 
 /**
- * I: 
- * O: 
- * C: 
- * E: 
+ * I: The function receives an object that may have a noises property containing an array.
+ * O: The function returns a string of the elements in the noises array concatenated together,
+ *    and if there are no elements in the array, there isn't an array, or if there
+ *    isn't a noises property, it should return the string "there are no noises".
+ * C: N/A
+ * E: N/A
  */
 
 function maybeNoises(object) {
-
+    // Check if object.noises is in the object and if it contains an array
+    if (object.noises && Array.isArray(object.noises)) {
+        // Check if object.noises.length is 0
+        if (object.noises.length === 0) {
+            // If true, return "there are no noises"
+            return "there are no noises";
+        }
+        // Return object.noises joined together with a space between each element
+        return object.noises.join(' ');
+    // Else, return "there are no noises"
+    } else {
+        return "there are no noises";
+    }
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -198,8 +212,8 @@ function maybeNoises(object) {
 //////////////////////////////////////////////////////////////////////
 
 /**
- * I: 
- * O: 
+ * I: The function receives a string of words and a string of a single word.
+ * O: The function returns a boolean 
  * C: 
  * E: 
  */
