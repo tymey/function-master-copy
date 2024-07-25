@@ -213,13 +213,25 @@ function maybeNoises(object) {
 
 /**
  * I: The function receives a string of words and a string of a single word.
- * O: The function returns a boolean 
- * C: 
- * E: 
+ * O: The function returns a boolean indicating if the input string of words
+ *    contains the input single word.
+ * C: N/A
+ * E: N/A
  */
 
 function hasWord(string, word) {
-
+    // Initialize stringArray variable with string.split(' ')
+    stringArray = string.split(' '); 
+    // Declare for loop using i; Start: 0; Stop: stringArray.length; Increment by 1 each loop
+    for (var i = 0; i < stringArray.length; i++) {
+        // Check if stringArray[i].toLowerCase() === word.toLowerCase()
+        if (stringArray[i].toLowerCase() === word.toLowerCase()) {
+            // If true, return true.
+            return true;
+        }
+    }
+    // Return false
+    return false;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -227,14 +239,16 @@ function hasWord(string, word) {
 //////////////////////////////////////////////////////////////////////
 
 /**
- * I: 
- * O: 
- * C: 
- * E: 
+ * I: The function receives a string representing a name of a friend
+ *    and an object with a friends property with the value of an array.
+ * O: The function return the input object with an updated friends property
+ *    containing the input friend name string.
+ * C: N/A
+ * E: N/A
  */
 
 function addFriend (name, object) {
-
+    
 }
 
 //////////////////////////////////////////////////////////////////////
