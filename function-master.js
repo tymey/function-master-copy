@@ -14,8 +14,11 @@ function objectValues(object) {
     var output = [];
     // Declare for-in loop on input object
     for (var key in object) {
-        // 
+        // Push object[key] values into output array
+        output.push(object[key]);
     }
+    // Return output
+    return output;
 } 
 
 //////////////////////////////////////////////////////////////////////
@@ -23,14 +26,23 @@ function objectValues(object) {
 //////////////////////////////////////////////////////////////////////
 
 /**
- * I: 
- * O: 
- * C: 
- * E: 
+ * I: The function receives an object.
+ * O: The function returns a string containing the names of the keys 
+ *    in the input object seperated by a space.
+ * C: N/A
+ * E: N/A
  */
 
 function keysToString(object) {
-
+    // Initialize outputArray variable with an empty array
+    var outputArray = [];
+    // Declare for-in loop on object
+    for (var key in object) {
+        // Push key into outputArray
+        outputArray.push(key)
+    }
+    // Return outputArray joined together into a string with a space between each element
+    return outputArray.join(' ');
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -38,14 +50,26 @@ function keysToString(object) {
 //////////////////////////////////////////////////////////////////////
 
 /**
- * I: 
- * O: 
- * C: 
- * E: 
+ * I: The funciton receives an object.
+ * O: The function returns a string of the string values assigned to each key 
+ *    of the input object seperated by a space. Don't not include non strings.
+ * C: N/A
+ * E: N/A
  */
 
 function valuesToString(object) {
-    
+    // Initialize output variable with an empty array
+    var output = [];
+    // Declare for-in loop on object
+    for (var key in object) {
+        // Check if object[key] is a string
+        if (typeof object[key] === 'string') {
+            // If true, push object[key] value into output array
+            output.push(object[key]);
+        }
+    }
+    // Return output array joined together with a space between each element
+    return output.join(' ');
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -53,14 +77,23 @@ function valuesToString(object) {
 //////////////////////////////////////////////////////////////////////
 
 /**
- * I: 
- * O: 
- * C: 
- * E: 
+ * I: The function receives one input of a piece of data.
+ * O: The function returns a string describing if the piece of 
+ *    data is an "array" or an "object".
+ * C: N/A
+ * E: N/A
  */
 
 function arrayOrObject(collection) {
-    
+    // Check if collection is an array data type.
+    if (Array.isArray(collection)) {
+        // If true, return "array"
+        return "array";
+    // Check else if collection is an object data type
+    } else if (typeof collection === 'object') {
+        // If true, return "object"
+        return "object"
+    }
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -68,14 +101,17 @@ function arrayOrObject(collection) {
 //////////////////////////////////////////////////////////////////////
 
 /**
- * I: 
- * O: 
- * C: 
- * E: 
+ * I: The function receives a strings on one word.
+ * O: The function returns a string of the input string with its first
+ *    letter capitalized.
+ * C: N/A
+ * E: N/A
  */
 
 function capitalizeWord(string) {
-    
+    // Isolate the first character of string with .charAt(0) and capitalize it with .toUpperCase()
+    // Return the capitialized first letter concatenated with the rest of string using .slice(1)
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -83,14 +119,25 @@ function capitalizeWord(string) {
 //////////////////////////////////////////////////////////////////////
 
 /**
- * I: 
- * O: 
- * C: 
- * E: 
+ * I: The function receives a string of multiple words seperated by a space.
+ * O: The function returns the input string with the first letter of each 
+ *    word capitalized.
+ * C: N/A
+ * E: N/A
  */
 
 function capitalizeAllWords(string) {
-    
+    // Initialize outputArray with an empty array
+    var outputArray = [];
+    // Inititalize stringArray variable with string.split(' ')
+    var stringArray = string.split(' ');
+    // Declare for loop using i; Start: 0; Stop: stringArray.length; Increment by 1 each loop
+    for (var i = 0; i < stringArray.length; i++) {
+        // Invoke capitializeWord() with stringArray[i] and push it into outputArray
+        outputArray.push(capitalizeWord(stringArray[i]));
+    }
+    // Return outerArray joined together with a space between each element
+    return outputArray.join(' ');
 }
 
 //////////////////////////////////////////////////////////////////////
