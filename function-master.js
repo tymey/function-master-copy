@@ -241,14 +241,17 @@ function hasWord(string, word) {
 /**
  * I: The function receives a string representing a name of a friend
  *    and an object with a friends property with the value of an array.
- * O: The function return the input object with an updated friends property
+ * O: The function returns the input object with an updated friends property
  *    containing the input friend name string.
  * C: N/A
  * E: N/A
  */
 
 function addFriend (name, object) {
-    
+    // Push name into object.friends array
+    object.friends.push(name);
+    // Return object
+    return object;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -256,14 +259,15 @@ function addFriend (name, object) {
 //////////////////////////////////////////////////////////////////////
 
 /**
- * I: 
- * O: 
- * C: 
- * E: 
+ * I: The function receives a string representing a name and an object.
+ * O: The function returns true if the input string name is in the input
+ *    object's friends array.
+ * C: N/A
+ * E: N/A
  */
 
 function isFriend(name, object) {
-
+    
 }
 
 //////////////////////////////////////////////////////////////////////
