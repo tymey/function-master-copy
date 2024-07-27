@@ -267,7 +267,22 @@ function addFriend (name, object) {
  */
 
 function isFriend(name, object) {
-    
+    // Check if object.friends is an array
+    if (Array.isArray(object.friends)) {
+        // If true, declare for loop using i; Start: 0; Stop: object.friends.length; Increment by 1 each loop
+        for (var i = 0; i < object.friends.length; i++) {
+            // Check if object.friends[i] is strictly equal to name
+            if (object.friends[i] === name) {
+                // If true, return true.
+                return true;
+            }
+        }
+    // Else, return false.
+    } else {
+        return false;
+    }
+// Return false
+return false;
 }
 
 //////////////////////////////////////////////////////////////////////
