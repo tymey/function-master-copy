@@ -290,14 +290,35 @@ return false;
 //////////////////////////////////////////////////////////////////////
 
 /**
- * I: 
- * O: 
- * C: 
- * E: 
+ * I: The function receives a string representing a name and an array
+ *    containing a list of objects with a name and friends property.
+ * O: The function returns an array of string names the input name is 
+ *    not friends with.
+ * C: N/A
+ * E: N/A
  */
 
 function nonFriends(name, array) {
-
+    // Initialize nonFriends variable with an empty array.
+    var nonFriends = [];
+    // Declare for loop using i; Start: 0; Stop: array.length; Increment by 1 each loop
+    for (var i = 0; i < array.length; i++) {
+        // Check if array[i].name !== name
+        if (array[i].name !== name) {
+            // If true, push array[i].name into nonFriends
+            nonFriends.push(array[i].name);
+            // Declare a for loop using j; Start: 0; Stop: array[i].friends.length; Increment by 1 each loop
+            for (var j = 0; j < array[i].friends.length; j++) {
+                // Check if array[i].friends[j] === name
+                if (array[i].friends[j] === name) {
+                    // If true, pop off the last entry of nonFriends
+                    nonFriends.pop();
+                }
+            }
+        }
+    }
+    // Return nonFriends
+    return nonFriends;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -305,14 +326,20 @@ function nonFriends(name, array) {
 //////////////////////////////////////////////////////////////////////
 
 /**
- * I: 
- * O: 
- * C: 
- * E: 
+ * I: The function receives an object, a key (string), and a value.
+ * O: The function updates the input property key on input object with 
+ *    the new input value. If the input key does not exist on input
+ *    object, the function creates it with the value. Returns the updated 
+ *    object.
+ * C: N/A
+ * E: N/A
  */
 
 function updateObject(object, key, value) {
-
+    // Update object with key and value using bracket notation
+    object[key] = value;
+    // Return object
+    return object;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -320,14 +347,28 @@ function updateObject(object, key, value) {
 //////////////////////////////////////////////////////////////////////
 
 /**
- * I: 
- * O: 
- * C: 
- * E: 
+ * I: The function receives an object and an array of strings representing
+ *    property names.
+ * O: The function removes any properties on input object that are listed
+ *    in the input array. The function then returns the updated object.
+ * C: N/A
+ * E: N/A
  */
 
 function removeProperties(object, array) {
-
+    // Declare for in loop on object
+    for (var key in object) {
+        // Declare for loop using i; Start: 0; Stop: array.length; Increment by 1 each loop
+        for (var i = 0; i < array.length; i++) {
+            // Check if key === array[i]
+            if (key === array[i]) {
+                // If true, delete object[key]
+                delete object[key];
+            }
+        }
+    }
+    // Return object
+    return object;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -335,14 +376,17 @@ function removeProperties(object, array) {
 //////////////////////////////////////////////////////////////////////
 
 /**
- * I: 
- * O: 
- * C: 
- * E: 
+ * I: The function receives an array.
+ * O: The function returns an array with all the duplicates in the input
+ *    array removed.
+ * C: N/A
+ * E: N/A
  */
 
 function dedup(array) {
-
+    // Initialize output variable with an empty array.
+    var output = [];
+    
 }
 
 //////////////////////////////////////////////////////////////////////
